@@ -2,6 +2,7 @@ class PeopleController < ApplicationController
 
   def index
     @people = Person.all
+    flash.now[:notice] = "We have exactly #{@people.size} people available."
   end
 
   def show
@@ -14,8 +15,12 @@ class PeopleController < ApplicationController
 
   def create
     @person = Person.new(person_params)
-    @person.save
-    redirect_to person_path(@person)
+    if @person.save
+      flash[:notice] = "Person was created successfully"
+      redirect_to @person
+    else
+      render 'new'
+    end
   end
 
   private
