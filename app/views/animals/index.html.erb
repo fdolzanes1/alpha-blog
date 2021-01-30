@@ -1,5 +1,17 @@
 <h1>All Animals</h1>
-<% @animals.each do |animal| %>
-  Name:
-  <b><%= animal.name %></b>
-<% end %>
+<table>
+  <tr>
+    <td> Name </td>
+    <td> Category </td>
+    <td> Color </td>
+    <td> Age </td>
+  </tr>
+  <% @animals.each do |animal| %>
+  <tr>
+    <td><%= animal.name %></td>
+    <td><%= animal.category %></td>
+    <td><%= animal.color %></td>
+    <td><%= animal.age %></td>
+  </tr>
+  <% end %>
+</table>
