@@ -1,12 +1,13 @@
 class PeopleController < ApplicationController
 
+  before_action :set_person, only: [:show, :edit, :update, :destroy]
+
   def index
     @people = Person.all
     flash.now[:notice] = "We have exactly #{@people.size} people available."
   end
 
   def show
-    @person = Person.find(params[:id])
   end
 
   def new 
@@ -14,7 +15,6 @@ class PeopleController < ApplicationController
   end
 
   def edit
-    @person = Person.find(params[:id])
   end
 
   def create
@@ -28,7 +28,6 @@ class PeopleController < ApplicationController
   end
 
   def update
-    @person = Person.find(params[:id])
     if @person.update(person_params)
       flash[:notice] = 'Person was updated'
       redirect_to @person
@@ -38,12 +37,15 @@ class PeopleController < ApplicationController
   end
 
   def destroy
-    @person = Person.find(params[:id])
     @person.destroy
     redirect_to people_path
   end
 
   private
+
+  def set_person
+    @person = Person.find(params[:id])
+  end
 
   def person_params
     params.require(:person).permit(:name, :email, :age)
