@@ -12,6 +12,9 @@
     <td><%= animal.category %></td>
     <td><%= animal.color %></td>
     <td><%= animal.age %></td>
+    <td><%= link_to 'Show', animal_path(animal) %></td>
+    <td><%= link_to 'Edit', edit_animal_path(animal) %></td>
+    <td><%= link_to 'Delete', animal_path(animal), method: :delete, data: {confirm: 'Are you sure?'} %></td>
   </tr>
   <% end %>
 </table>

@@ -1,17 +1,2 @@
 <h1>Create a new animal</h1>
-<%= form_for @animal do |f| %>
-  <%= f.label :name%>
-  <%= f.text_field :name%>
-  <br/><br/>
-  <%= f.label :category%>
-  <%= f.text_field :category%>
-  <br/><br/>
-  <%= f.label :color%>
-  <%= f.text_field :color%>
-  <br/><br/>
-  <%= f.label :age%>
-  <%= f.text_field :age%>
-  <br/><br/>
-  <%= f.submit %>
-  <%= link_to 'Back', animals_path %>
-<% end %>
+<%= render 'form' %>
