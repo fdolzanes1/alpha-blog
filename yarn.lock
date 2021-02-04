@@ -1831,7 +1831,7 @@ chokidar@^2.1.8:
     readdirp "^2.2.1"
     upath "^1.1.1"
   optionalDependencies:
-    fsevents "^1.2.7"
+    "fsevents": "2.1.2"
 
 chokidar@^3.4.1:
   version "3.5.1"
@@ -1846,7 +1846,7 @@ chokidar@^3.4.1:
     normalize-path "~3.0.0"
     readdirp "~3.5.0"
   optionalDependencies:
-    fsevents "^1.2.7"
+    "fsevents": "2.1.2"
 
 chownr@^1.1.1, chownr@^1.1.2:
   version "1.1.4"
