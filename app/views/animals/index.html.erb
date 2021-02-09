@@ -1,20 +1,23 @@
-<h1>All Animals</h1>
-<table>
-  <tr>
-    <td> Name </td>
-    <td> Category </td>
-    <td> Color </td>
-    <td> Age </td>
-  </tr>
+<div id="page-content">
+  <h1 class="text-center mt-4">Listing all animals</h1>
+  <div class="container">
   <% @animals.each do |animal| %>
-  <tr>
-    <td><%= animal.name %></td>
-    <td><%= animal.category %></td>
-    <td><%= animal.color %></td>
-    <td><%= animal.age %></td>
-    <td><%= link_to 'Show', animal_path(animal) %></td>
-    <td><%= link_to 'Edit', edit_animal_path(animal) %></td>
-    <td><%= link_to 'Delete', animal_path(animal), method: :delete, data: {confirm: 'Are you sure?'} %></td>
-  </tr>
+    <div class="row justify-content-md-center">
+      <div class="col-8 mt-4">
+        <div class="card text-center shadow mb-5 bg-white rounded">
+          <div class="card-header font-italic">
+            by Fabiano Dolzanes
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to animal.name, animal_path(animal), class: "text-success" %></h5>
+            <p class="card-text"><%= truncate(animal.category, length: 100) %></p>
+            <%= link_to "View", animal_path(animal), class: "btn btn-outline-success" %>
+            <%= link_to "Edit", edit_animal_path(animal), class: "btn btn-outline-info" %>
+            <%= link_to "Delete", animal_path(animal), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
-</table>
+  </div>
+</div>

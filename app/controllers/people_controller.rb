@@ -4,7 +4,6 @@ class PeopleController < ApplicationController
 
   def index
     @people = Person.all
-    flash.now[:notice] = "We have exactly #{@people.size} people available."
   end
 
   def show
