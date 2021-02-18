@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   
   root 'pages#home'
-  get 'about', to: 'pages#about'
+  
   resources :articles
-  resources :people 
   resources :animals
+  resources :people
+
+  get 'about', to: 'pages#about'
+  get 'signup', to: 'people#new'
 end

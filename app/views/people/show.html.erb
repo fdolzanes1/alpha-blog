@@ -8,7 +8,6 @@
 				  	</div>
 				  	<div class="card-body">
 				    	<div class="card-text text-left"><%= simple_format(@person.email) %></div>
-				    	<div class="card-text text-left">Age: <%= @person.age %></div>
 				    	<%= link_to "Edit", edit_person_path(@person), class: "btn btn-outline-info" %>
 				    	<%= link_to "Delete", person_path(@person), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"} %>
 				  	</div>

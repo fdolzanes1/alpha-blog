@@ -6,21 +6,21 @@
         <div class="form-group row">
           <%= f.label :name, class: "col-2 col-form-label text-light" %>
           <div class="col-10">
-            <%= f.text_field :name, class: "form-control shadow rounded", placeholder: "name" %>
+            <%= f.text_field :name, class: "form-control shadow rounded", placeholder: "Enter a name" %>
           </div>
         </div>
         <br/>
         <div class="form-group row">
           <%= f.label :email, class: "col-2 col-form-label text-light" %>
           <div class="col-10">
-            <%= f.text_field :email, class: "form-control shadow rounded", placeholder: "email" %>
+            <%= f.text_field :email, class: "form-control shadow rounded", placeholder: "Enter a email" %>
           </div>
         </div>
         <br/>
         <div class="form-group row">
-          <%= f.label :age, class: "col-2 col-form-label text-light" %>
-          <div class="col-10">
-            <%= f.text_field :age, class: "form-control shadow rounded", placeholder: "age" %>
+          <%= f.label :password, class: "col-2 col-form-label text-light" %>
+          <div class="col-10"> 
+            <%= f.password_field :password, class: "form-control shadow rounded", placeholder: "Choose a password" %>
           </div>
         </div>
         <br/>
@@ -30,7 +30,7 @@
       <% end %>
     </div>
     <div class="mb-3">
-      <%= link_to '[ Cancel and return to people listing ]', people_path, class: "text-info" %>
+      <%= link_to '[ Cancel and return to articles listing ]', articles_path, class: "text-info" %>
     </div>
   </div>
 </div>
