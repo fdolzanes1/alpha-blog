@@ -19,8 +19,8 @@ class PeopleController < ApplicationController
   def create
     @person = Person.new(person_params)
     if @person.save
-      flash[:notice] = "Person was created successfully"
-      redirect_to @person
+      flash[:notice] = "Welcome to the Alpha Blog #{@person.name}, you have successfully signed up"
+      redirect_to articles_path
     else
       render 'new'
     end
@@ -28,8 +28,8 @@ class PeopleController < ApplicationController
 
   def update
     if @person.update(person_params)
-      flash[:notice] = 'Person was updated'
-      redirect_to @person
+      flash[:notice] = "Your account information was successfully updated"
+      redirect_to articles_path
     else
       render 'edit'
     end
@@ -47,7 +47,7 @@ class PeopleController < ApplicationController
   end
 
   def person_params
-    params.require(:person).permit(:name, :email, :age, :password)
+    params.require(:person).permit(:name, :email, :password)
   end
 
 end
