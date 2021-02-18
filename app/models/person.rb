@@ -6,4 +6,5 @@ class Person < ApplicationRecord
   validates :age, presence: true, numericality: { only_integer: true }
 
   has_many :articles
+  has_secure_password
 end
