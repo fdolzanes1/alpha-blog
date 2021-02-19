@@ -1,20 +1,26 @@
-<div id="page-content">
-  <h1 class="text-center mt-4">Listing all people</h1>
-  <div class="container">
-    <% @people.each do |person| %>
+<h1 class="text-center mt-4">Alpha Bloggers</h1>
+
+<div class="container">
+  <% @people.each do |person| %>
     <div class="row justify-content-md-center">
       <div class="col-8 mt-4">
         <div class="card text-center shadow mb-5 bg-white rounded">
+          <div class="card-header font-italic">
+            <%= link_to person.name, person %>
+          </div>
           <div class="card-body">
-            <h5 class="card-title"><%= link_to person.name, person_path(person), class: "text-success" %></h5>
-            <p class="card-text"><%= truncate(person.email, length: 100) %></p>
-            <%= link_to "View", person_path(person), class: "btn btn-outline-success" %>
-            <%= link_to "Edit", edit_person_path(person), class: "btn btn-outline-info" %>
-            <%= link_to "Delete", person_path(person), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+            <h5 class="card-title">
+              <%= link_to gravatar_for(person, size: 150), person %>
+            </h5>
+            <p class="card-text"><%= pluralize(person.articles.count, "article") %></p>
+            <%= link_to "View profile", person, class: "btn btn-outline-success" %>
+            <%= link_to "Edit profile", edit_person_path(person), class: "btn btn-outline-info" %>
+          </div>
+          <div class="card-footer text-muted">
+            <small>Joined <%= time_ago_in_words(person.created_at) %> ago</small>
           </div>
         </div>
       </div>
-    </div>      
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
