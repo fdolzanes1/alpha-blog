@@ -7,6 +7,7 @@ class PeopleController < ApplicationController
   end
 
   def show
+    @articles = @person.articles
   end
 
   def new 
