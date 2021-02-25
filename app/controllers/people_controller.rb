@@ -21,7 +21,7 @@ class PeopleController < ApplicationController
     @person = Person.new(person_params)
     if @person.save
       flash[:notice] = "Welcome to the Alpha Blog #{@person.name}, you have successfully signed up"
-      redirect_to articles_path
+      redirect_to @person
     else
       render 'new'
     end
