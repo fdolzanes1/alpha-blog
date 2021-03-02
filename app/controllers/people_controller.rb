@@ -20,6 +20,7 @@ class PeopleController < ApplicationController
   def create
     @person = Person.new(person_params)
     if @person.save
+      session[:person_id] = @person.id
       flash[:notice] = "Welcome to the Alpha Blog #{@person.name}, you have successfully signed up"
       redirect_to @person
     else
